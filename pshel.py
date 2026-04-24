@@ -1,13 +1,29 @@
+import os
+import sys
 
+# TODO: make list of already existing linux commands
+existing_cmds = os.listdir("/bin/")
 
+# TODO: make some functions
+def dir_nav(area):
+
+    if area == '..':
+        try:
+            os.chdir('..')    
+        except:
+            print(f"{area} Not Found")
+
+# TODO: make a function that creates some environment variables
 
 
 # TODO: make loop to take input
+while True:
 
-# TODO: read a line of input
+    line = input("#> ")
+    line_tokens = line.split(" ")
 
-# TODO: tokenize input
+    if line_tokens[0] in existing_cmds:
+        os.system(line)
+    
+    
 
-# TODO: parse tokens
-
-# TODO: call functions based on input
